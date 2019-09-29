@@ -11,7 +11,6 @@ export default {
     data() {
         return {
             canvas: null,//canvas元素
-            ctx: null,
             width: window.innerWidth,
             height: window.innerHeight,
         }
@@ -229,6 +228,7 @@ export default {
     },
     mounted(){
         console.log(this.msg);
+        console.log("%c","background:url/assets/img/wx_code.jpg) no-repeat;padding-left:80px;padding-bottom: 80px;border-radius:50%;");
         this.initialize();
     },
 }
@@ -242,8 +242,8 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 1);
         pointer-events: none;
+        opacity: 0.2;
     }
 
 </style>
