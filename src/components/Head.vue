@@ -5,13 +5,16 @@
 				<router-link to="/">Home</router-link>
 			</el-menu-item>
 			<el-menu-item index="2">
-				<router-link to="/about">轨迹</router-link>
+				<router-link to="/blog">Blog</router-link>
 			</el-menu-item>
 			<el-menu-item index="3">
-				<router-link to="/photo">旅行</router-link>
+				<router-link to="/about">Locus</router-link>
 			</el-menu-item>
 			<el-menu-item index="4">
-				<router-link to="/about">日迹</router-link>
+				<router-link to="/photo">Travel</router-link>
+			</el-menu-item>
+			<el-menu-item index="5">
+				<router-link to="/about">Trace</router-link>
 			</el-menu-item>
 		</el-menu>
 		<div class="line"></div>

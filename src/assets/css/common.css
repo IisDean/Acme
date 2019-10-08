@@ -1,6 +1,6 @@
 body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,p,form,header,section,article,footer{margin:0;}
 body,button,input,select,textarea{font:12px/1.5 tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif}
-h1,h2,h3,h4,h5,h6{font-size:100%}
+h1,h2,h3,h4,h5,h6,p {line-height: 1;font-size:100%}
 em,b{font-style:normal}
 a{text-decoration:none} 
 a:hover{text-decoration:underline}
@@ -8,3 +8,31 @@ img{border:0}
 button,input,select,textarea{font-size:100%;outline:none}
 table{border-collapse:collapse;border-spacing:0}
 td,th,ul,ol{padding:0}
+.btn-link {
+    display: inline-block;
+}
+.full-img img {
+    display: block;
+}
+.clearfix:before,
+.clearfix:after {
+  display: block;
+  content: "";
+}
+.clearfix:after {
+  clear: both
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.input-with-select input {
+    background-color: transparent;
+}
+.box-s {
+    background-color: transparent;
+    -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}

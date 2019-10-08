@@ -4,15 +4,25 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
+    <HomeBg msg="你好！这里是IisDean的个人网站，如有意深入交流，可加wx：IisDean" />
     <router-view/>
   </div>
 </template>
 
 <script>
 import $ from 'jquery';
+import HomeBg from "@/components/HomeBg.vue";
 export default {
+  data() {
+    return {
+      
+    }
+  },
+  components: {
+
+		HomeBg,
+  },
   created() {
-    
   }
 }
 </script>

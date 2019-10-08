@@ -1,6 +1,5 @@
 <template>
     <div class="home">
-    	<HomeBg msg="你好！这里是IisDean的个人网站，如有意深入交流，可加wx：IisDean" />
 		<Head/>
 		<el-card class="box-card">
 			<el-row>
@@ -27,7 +26,6 @@
 <script>
 // @ is an alias to /src
 import Vue from 'vue';
-import HomeBg from "@/components/HomeBg.vue";
 import Head from "@/components/Head.vue";
 import BaiduMap from 'vue-baidu-map';
 import mapStyleJson from '@/json/custom_map_config.json';
@@ -58,7 +56,6 @@ export default {
 		}
 	},
   	components: {
-		HomeBg,
 		Head
 	},
 	methods: {
