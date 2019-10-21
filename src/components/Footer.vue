@@ -9,7 +9,7 @@ export default {
     data (){
         return {
             en: 'COPYRIGHT © 2019 – 2019 IisDean. ALL RIGHTS RESERVED.',
-            cn: '叫我院长 版权所有'
+            cn: '叫我院长保留所有权利'
         }
     }
 }

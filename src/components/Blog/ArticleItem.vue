@@ -13,7 +13,7 @@
         <ul class="article-list">
             <li class="article-item clearfix" v-for="todo in articleList">
                 <div class="article-box float-left">
-                    <router-link to="/about" class="article-link">
+                    <router-link :to="'/blogDetail?id='+todo.id" class="article-link">
                         <h2 class="article-title-text">{{ todo.title }}</h2>
                     </router-link>
                     <ul class="msg-cn clearfix">
@@ -33,7 +33,7 @@
                             <span>{{ todo.updateTime }}</span>
                         </li>
                     </ul>
-                </div>    
+                </div>
                 <div class="article-cover float-right">
                     <el-image
                     style="width: 70px; height: 70px"
@@ -54,6 +54,7 @@
 export default {
     data() {
         return {
+            scr: '123',
             articleList: [
                 {
                     id: 123,
