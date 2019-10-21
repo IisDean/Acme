@@ -21,12 +21,8 @@
                             <el-tag type="info">{{ label }}</el-tag>
                         </li>
                         <li class="msg-label float-left">
-                            <i class="el-icon-user"></i>
-                            <span>{{ todo.user }}</span>
-                        </li>
-                        <li class="msg-label float-left">
-                            <i class="el-icon-view"></i>
-                            <span>{{ todo.read }}</span>
+                            <i class="icon icon-dianzan"></i>
+                            <span>{{ todo.zan }}</span>
                         </li>
                         <li class="msg-label float-left">
                             <i class="el-icon-chat-dot-round"></i>
@@ -61,63 +57,60 @@ export default {
             articleList: [
                 {
                     id: 123,
-                    title: '你有看见过我的Blog文章的标题名称吗',
+                    title: '你有看见过我的Blog文章的标题吗？',
+                    label: ['生活', '技巧'],
                     imgUrl: '',
-                    updateTime: '2019-10-08',
-                    user: 'IisDean',
-                    read: '999',
+                    zan: 2,
                     messageNum: '12',
-                    label: ['生活', '技巧']
-                },
-                {
-                    id: 456,
-                    title: '你有看见过我的Blog文章的标题名称吗',
+                    updateTime: '1小时前'
+                },{
+                    id: 123,
+                    title: '你有看见过我的Blog文章的标题吗？',
+                    label: ['生活', '技巧'],
                     imgUrl: '',
-                    updateTime: '2019-10-08',
-                    user: 'IisDean',
-                    read: '999',
+                    zan: 2,
                     messageNum: '12',
-                    label: ['生活', '技巧']
-                },
-                {
-                    id: 456,
-                    title: '你有看见过我的Blog文章的标题名称吗',
+                    updateTime: '1小时前'
+                },{
+                    id: 123,
+                    title: '你有看见过我的Blog文章的标题吗？',
+                    label: ['生活', '技巧'],
                     imgUrl: '',
-                    updateTime: '2019-10-08',
-                    user: 'IisDean',
-                    read: '999',
+                    zan: 2,
                     messageNum: '12',
-                    label: ['生活', '技巧']
-                },
-                {
-                    id: 456,
-                    title: '你有看见过我的Blog文章的标题名称吗',
+                    updateTime: '1小时前'
+                },{
+                    id: 123,
+                    title: '你有看见过我的Blog文章的标题吗？',
+                    label: ['生活', '技巧'],
                     imgUrl: '',
-                    updateTime: '2019-10-08',
-                    user: 'IisDean',
-                    read: '999',
+                    zan: 2,
                     messageNum: '12',
-                    label: ['生活', '技巧']
-                },
-                {
-                    id: 456,
-                    title: '你有看见过我的Blog文章的标题名称吗',
+                    updateTime: '1小时前'
+                },{
+                    id: 123,
+                    title: '你有看见过我的Blog文章的标题吗？',
+                    label: ['生活', '技巧'],
                     imgUrl: '',
-                    updateTime: '2019-10-08',
-                    user: 'IisDean',
-                    read: '999',
+                    zan: 2,
                     messageNum: '12',
-                    label: ['生活', '技巧']
-                },
-                {
-                    id: 456,
-                    title: '你有看见过我的Blog文章的标题名称吗',
+                    updateTime: '1小时前'
+                },{
+                    id: 123,
+                    title: '你有看见过我的Blog文章的标题吗？',
+                    label: ['生活', '技巧'],
                     imgUrl: '',
-                    updateTime: '2019-10-08',
-                    user: 'IisDean',
-                    read: '999',
+                    zan: 2,
                     messageNum: '12',
-                    label: ['生活', '技巧']
+                    updateTime: '1小时前'
+                },{
+                    id: 123,
+                    title: '你有看见过我的Blog文章的标题吗？',
+                    label: ['生活', '技巧'],
+                    imgUrl: '',
+                    zan: 2,
+                    messageNum: '12',
+                    updateTime: '1小时前'
                 }
             ]
         }
@@ -171,7 +164,7 @@ export default {
         line-height: 20px;
     }
     .msg-cn .msg-label {
-        margin-left: 15px;
+        margin-left: 10px;
         line-height: 20px;
         font-size: 12px;
         color: #909399;
@@ -195,5 +188,10 @@ export default {
     }
     .pagination-wrap {
         padding: 15px 0;
+    }
+    @media screen and (max-width: 374px) {
+        .msg-cn .article-tag:nth-of-type(n+2) {
+            display: none;
+        }
     }
 </style>

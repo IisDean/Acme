@@ -22,6 +22,15 @@
                         <el-card class="box-card card" :body-style="{ padding: '0px' }">
                             <div class="card-header clearfix">
                                 <el-button type="text" class="article-nav-item float-left">
+                                    <i class="el-icon-news"></i>
+                                    <span>动态</span>
+                                </el-button>                     
+                            </div>
+                            
+                        </el-card>
+                        <el-card class="box-card card" :body-style="{ padding: '0px' }">
+                            <div class="card-header clearfix">
+                                <el-button type="text" class="article-nav-item float-left">
                                     <i class="el-icon-connection"></i>
                                     <span>友情链接</span>
                                 </el-button>                     
@@ -32,9 +41,7 @@
                 </el-col>
             </el-row>
         </div>
-        <el-footer>
-            
-        </el-footer>
+        <Footer></Footer>
     </div>
 </template>
 
@@ -104,6 +111,12 @@ export default {
         margin-bottom:  15px;
     }
     @media screen and (min-width: 1200px) {
+        .el-row .el-col:first-child {
+            padding-left: 0 !important;
+        }
+        .el-row .el-col:last-child {
+            padding-right: 0 !important;
+        }
         .wrap {
             min-width: 1200px;
         }

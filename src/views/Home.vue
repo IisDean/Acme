@@ -26,7 +26,6 @@
 <script>
 // @ is an alias to /src
 import Vue from 'vue';
-import Head from "@/components/Head.vue";
 import BaiduMap from 'vue-baidu-map';
 import mapStyleJson from '@/json/custom_map_config.json';
 
@@ -56,7 +55,7 @@ export default {
 		}
 	},
   	components: {
-		Head
+		  
 	},
 	methods: {
 		handler ({BMap, map}) {

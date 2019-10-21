@@ -8,6 +8,10 @@ button,input,select,textarea{font-size:100%;outline:none}
 table{border-collapse:collapse;border-spacing:0}
 ul,ol,li{list-style: none;}
 td,th,ul,ol{padding:0}
+@import url('//at.alicdn.com/t/font_1468579_v1dzsee4f5l.css');
+.icon {
+    font-size: 12px;
+}
 .btn-link {
     display: inline-block;
 }

@@ -19,8 +19,7 @@ export default {
     }
   },
   components: {
-
-		HomeBg,
+	HomeBg
   },
   created() {
   }
