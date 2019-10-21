@@ -1,41 +1,87 @@
 <template>
-    <el-container>
-        <el-header class="header-cn box-s">
-            <div class="header-wrap clearfix">
-                <router-link to="/blog" class="logo-wrap btn-link float-left">
-                    <el-image class="logo-icon full-img" :src="urlLogo" fit="contain"></el-image>
-                </router-link>
-                <el-button type="text" class="blog-nav-item float-left">Article</el-button>
-                <div class="search-wrap float-right box-s">
-                    <el-input placeholder="请输入内容" v-model="searchText" class="input-with-select">
-                        <el-button slot="append" icon="el-icon-search"></el-button>
-                    </el-input>
-                </div>
-            </div>
-        </el-header>
-        <el-container class="wrap">
-            <el-main class="main">
-                <el-card class="box-card card" :body-style="{ padding: '0px'}">
-                    <ArticleItem></ArticleItem>
-                </el-card>
-            </el-main>
-            <el-aside width="200px">Aside</el-aside>
-        </el-container>
-        <el-footer>Footer{{searchText}}</el-footer>
-    </el-container>
+    <div>
+        <BlogHeader></BlogHeader>
+        <div class="main">
+            <el-row :gutter="12" class="mr-0">
+                <el-col :xl='18' :lg="18" :md="16" :sm="24">
+                    <el-card class="box-card card" :body-style="{ padding: '0px'}">
+                        <ArticleItem></ArticleItem>
+                    </el-card>
+                </el-col>
+                <el-col :xl="6" :lg="6" :md="8" :sm="24">
+                    <el-aside width="auto" class="card-list">
+                        <el-card class="box-card card" :body-style="{ padding: '0px'}">
+                            <div class="card-header clearfix">
+                                <el-button type="text" class="article-nav-item float-left">
+                                    <i class="el-icon-collection-tag"></i>
+                                    <span>分类</span>
+                                </el-button>                     
+                            </div>
+                            <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+                        </el-card>
+                        <el-card class="box-card card" :body-style="{ padding: '0px' }">
+                            <div class="card-header clearfix">
+                                <el-button type="text" class="article-nav-item float-left">
+                                    <i class="el-icon-connection"></i>
+                                    <span>友情链接</span>
+                                </el-button>                     
+                            </div>
+                            <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+                        </el-card>
+                    </el-aside>
+                </el-col>
+            </el-row>
+        </div>
+        <el-footer>
+            
+        </el-footer>
+    </div>
 </template>
 
 <script>
 import ArticleItem from "@/components/Blog/ArticleItem.vue";
+import BlogHeader from "@/components/Blog/BlogHeader.vue";
 export default {
     data() { 
         return {
-            urlLogo: require('@/assets/img/blog.png'),
-            searchText: "" 
+            data: [
+                {
+                    id: 1,
+                    label: '生活'
+                },{
+                    id: 2,
+                    label: '技巧'
+                },{
+                    id: 3,
+                    label: '前端'
+                },{
+                    id: 4,
+                    label: '后端'
+                },{
+                    id: 5,
+                    label: 'JavaScript'
+                },{
+                    id: 6,
+                    label: 'Vue'
+                },{
+                    id: 7,
+                    label: 'Node.Js'
+                }
+            ],
+            defaultProps: {
+                children: 'children',
+                label: 'label'
+            }
         } 
+    },
+    methods: {
+      handleNodeClick(data) {
+        console.log(data.id);
+      }
     },
     components: {
         ArticleItem,
+        BlogHeader
     }
 }
 </script>
@@ -44,49 +90,30 @@ export default {
     /* header */
     .wrap {
         margin: 0 auto;
-        width: 1200px;
-    }
-    .header-cn {
-        position: relative;
-        z-index: 999;
         width: 100%;
-        height: 70px;
-        border-bottom: 1px solid #f0f0f0;
     }
-    .header-wrap {
-        margin: 0 auto;
-        width: 1200px;
-        text-align: left;
-    }
-    .header-wrap .el-menu-demo {
-        border-bottom: 0;
-        background-color: transparent;
-    }
-    .logo-wrap,
-    .logo-icon {
-        width: auto;
-        height: 40px;
-    }
-    .logo-wrap {
-        margin-right: 30px;
-        margin-top: 10px;
-    }
-    .search-wrap {
-        margin-left: 20px;
-        margin-top: 10px;
-        width: 249px;
-    }
-    .blog-nav-item {
-        margin-left: 20px;
-        margin-top: 10px;
-        font-size: 16px;
-        color: #191919;
-    }
-    
     /* main */
     .main {
-        margin: auto -12px;
-        padding: 0;
+        margin: 12px auto;
     }
-
+    .box-card {
+        margin: 0;
+        background-color: transparent;
+    }
+    .card-list .box-card {
+        margin-bottom:  15px;
+    }
+    @media screen and (min-width: 1200px) {
+        .wrap {
+            min-width: 1200px;
+        }
+        .main {
+            width: 1200px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .card-list .box-card:first-child {
+            margin-top: 15px;
+        }
+    }
 </style>

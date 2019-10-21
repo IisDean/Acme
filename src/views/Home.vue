@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-		<Head/>
+		<Head></Head>
 		<el-card class="box-card">
 			<el-row>
 				<el-col :span="12">

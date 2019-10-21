@@ -7,6 +7,8 @@ import App from './App.vue';
 import router from './router';
 
 import {
+  Row,
+  Col,
   Menu,
   MenuItem,
   Card,
@@ -19,9 +21,14 @@ import {
   Footer, 
   Icon,
   Button,
-  Tag
+  Tag,
+  Pagination,
+  Tree,
+  Divider
 } from 'element-ui';
  
+Vue.use(Row);
+Vue.use(Col);
 Vue.use(Menu);
 Vue.use(MenuItem);
 Vue.use(Card);
@@ -35,6 +42,9 @@ Vue.use(Footer);
 Vue.use(Icon);
 Vue.use(Button);
 Vue.use(Tag);
+Vue.use(Pagination);
+Vue.use(Tree);
+Vue.use(Divider);
 
 Vue.config.productionTip = false
 Vue.prototype.$ = $;
