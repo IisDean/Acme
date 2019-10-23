@@ -94,39 +94,5 @@ export default {
 </script>
 
 <style scoped>
-    /* header */
-    .wrap {
-        margin: 0 auto;
-        width: 100%;
-    }
-    /* main */
-    .main {
-        margin: 12px auto;
-    }
-    .box-card {
-        margin: 0;
-        background-color: transparent;
-    }
-    .card-list .box-card {
-        margin-bottom:  15px;
-    }
-    @media screen and (min-width: 1200px) {
-        .el-row .el-col:first-child {
-            padding-left: 0 !important;
-        }
-        .el-row .el-col:last-child {
-            padding-right: 0 !important;
-        }
-        .wrap {
-            min-width: 1200px;
-        }
-        .main {
-            width: 1200px;
-        }
-    }
-    @media screen and (max-width: 767px) {
-        .card-list .box-card:first-child {
-            margin-top: 15px;
-        }
-    }
+
 </style>
