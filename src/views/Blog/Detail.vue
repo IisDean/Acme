@@ -5,7 +5,10 @@
             <el-row :gutter="12" class="mr-0">
                 <el-col :xl='18' :lg="18" :md="16" :sm="24">
                     <el-card class="box-card card" :body-style="{ padding: '0px'}">
-                        <!-- <Simditor :id="123"></Simditor> -->
+                        <Editor :catchData="123"></Editor>
+                        <div>
+                            {{ msg }}
+                        </div>
                     </el-card>
                 </el-col>
                 <el-col :xl="6" :lg="6" :md="8" :sm="24">
@@ -44,35 +47,20 @@
 
 <script>
 import BlogHeader from '@/components/Blog/BlogHeader';
-// import Simditor from '@/components/Simditor';
+import Editor from '@/components/Editor';
 export default {
     data (){
         return {
-            msg: '',
-            data: '',
-            content:'',
-            options: {
-                placeHolder: 'this is placeHolder',
-                toolbarFloat: false,
-                toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment',],
-                pasteImage:true,
-                upload:{
-                    url : `http://`, //文件上传的接口地址
-                    params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
-                    fileKey: 'file', //服务器端获取文件数据的参数名
-                    connectionCount: 3,
-                    leaveConfirm: '正在上传文件'
-                }
-            }
+            msg: '123'
         }
     },
     components: {
         BlogHeader,
-        // Simditor
+        Editor
     },
     methods: {
-        change(val){
-            console.log(val)  //以html格式获取simditor的正文内容
+        run() {
+            console.log('我是父组件的方法')
         }
     }
 }
