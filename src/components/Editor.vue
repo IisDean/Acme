@@ -106,9 +106,7 @@ export default {
 </script>
 
 <style>
-.w-e-toolbar,
-.w-e-droplist,
-.w-e-text-container .w-e-panel-container {
+.w-e-toolbar {
 	background-color: transparent !important;
 }
 .w-e-toolbar {

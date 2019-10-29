@@ -145,7 +145,7 @@ export default {
         opacity: 0;
     }
     .article-item {
-        padding: 15px 12px;
+        padding: 15px 24px;
         border-bottom: 1px solid #f4f4f4;
     }
     .article-link {
