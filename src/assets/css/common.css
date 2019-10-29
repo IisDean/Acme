@@ -7,6 +7,9 @@ button,input,select,textarea{font-size:100%;outline:none}
 table{border-collapse:collapse;border-spacing:0}
 ul,ol,li{list-style: none;}
 td,th,ul,ol{padding:0}
+.trans {
+    transition: .5s all;
+}
 @import url('//at.alicdn.com/t/font_1468579_v1dzsee4f5l.css');
 .icon {
     font-size: 12px;
@@ -70,6 +73,10 @@ td,th,ul,ol{padding:0}
 }
 .card-list .box-card {
     margin-bottom:  15px;
+}
+.section-title-text {
+    margin: 30px auto 10px;
+    font-size: 18px;
 }
 @media screen and (min-width: 1200px) {
     .el-row .el-col:first-child {
