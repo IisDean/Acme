@@ -52,13 +52,14 @@
 
 <script>
 export default {
+    name: 'ArticleItem',
     data() {
         return {
             scr: '123',
             articleList: [
                 {
                     id: 123,
-                    title: '你有看见过我的Blog文章的标题吗？',
+                    title: '理解JavaScript执行上下文',
                     label: ['生活', '技巧'],
                     imgUrl: '',
                     zan: 2,
@@ -179,7 +180,7 @@ export default {
     }
     .article-title-text {
         margin: 0;
-        color: #464c5b;
+        color: #303133;
         line-height: 20px;
         font-size: 18px;
         text-align: left;

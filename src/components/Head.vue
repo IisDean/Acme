@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: "heads",
+    name: "Head",
     data() {
         return {
         	activeIndex: '1',

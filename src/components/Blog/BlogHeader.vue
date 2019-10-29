@@ -22,6 +22,7 @@
 
 <script>
 export default {
+    name: 'BlogHeader',
     data() {
         return {
             urlLogo: require('@/assets/img/blog.png'),

@@ -6,6 +6,7 @@
 </template>
 <script>
 export default {
+    name: 'Footer',
     data (){
         return {
             en: 'COPYRIGHT © 2019 – 2019 IisDean. ALL RIGHTS RESERVED.',

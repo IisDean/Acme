@@ -4,10 +4,12 @@
         <div class="main">
             <el-row :gutter="12" class="mr-0">
                 <el-col :xl='18' :lg="18" :md="16" :sm="24">
-                    <el-card class="box-card card" :body-style="{ padding: '0px'}">
-                        <Editor :catchData="123"></Editor>
-                        <div>
-                            {{ msg }}
+                    <el-card class="box-card text-left card" :body-style="{ padding: '0px'}">
+                        <div class="article-wrap">
+                            <h1 class="article-title-text">理解JavaScript执行上下文</h1>   
+                            <div class="article-centent" v-html="defaultText"></div>
+                            <Editor :catchData="catchData"></Editor>
+                            <div class="editor-preview" v-html="content"></div>
                         </div>
                     </el-card>
                 </el-col>
@@ -48,10 +50,12 @@
 <script>
 import BlogHeader from '@/components/Blog/BlogHeader';
 import Editor from '@/components/Editor';
+import editorDefault from '@/assets/js/editor/editor_default.js';
 export default {
     data (){
         return {
-            msg: '123'
+            content: '',
+            defaultText: editorDefault
         }
     },
     components: {
@@ -59,13 +63,19 @@ export default {
         Editor
     },
     methods: {
-        run() {
-            console.log('我是父组件的方法')
+        catchData(value) {
+            console.log(value);
+            this.content = value;
         }
     }
 }
 </script>
 
-<style>
-
+<style scope>
+    .article-wrap {
+        padding: 24px;
+    }
+    .article-title-text {
+        font-size: 38px;
+    }
 </style>

@@ -1,24 +1,29 @@
 <template>
-	<div id="wangeditor">
-		<button @click="getParentData()">按钮</button>
-		<div ref="editorElem" style="text-align:left"></div>
+	<div class="wangeditor">
+		<div ref="editorElem" class="wangeditor-box text-left"></div>
 	</div>
 </template>
 
 <script>
 import wangeditor from 'wangeditor';
+import emoji from '@/assets/js/editor/emoji.js';//表情配置文件
 export default {
+	name: 'Editor',
 	data() {
 		return {
 			editorContent: ""
 		}
 	},
+	props: ["catchData"], //接收父组件的方法
 	mounted() {
 		var editor = new wangeditor(this.$refs.editorElem);
 		editor.customConfig.onchange = html => {
 			this.editorContent = html;
-			// this.$parent.getEditorCon(); //把这个html通过catchData的方法传入父组件
+			this.catchData(html); //把这个html通过catchData的方法传入父组件
 		};
+		//表情配置
+		editor.customConfig.emotions = emoji;
+		editor.customConfig.pasteFilterStyle = false; //手动关闭掉粘贴样式的过滤
 		editor.customConfig.uploadImgShowBase64 = true; // base 64 存储图片
 		editor.customConfig.uploadImgServer = "http://172.16.40.170:8080/upload/image/"; // 配置服务器端地址
 		editor.customConfig.uploadImgHeaders = {
@@ -47,8 +52,6 @@ export default {
 			"quote", // 引用
 			"emoticon", // 表情
 			"image", // 插入图片
-			// "table", // 表格
-			// "video", // 插入视频
 			"code", // 插入代码
 			"undo", // 撤销
 			"redo", // 重复
@@ -94,20 +97,80 @@ export default {
 				insertImg(url);
 			}
 		};
-
 		editor.create();
 	},
 	methods: {
-		catchData(value) {
-			// this.content = value; //在这里接收子组件传过来的参数
-			// this.$parent.getEditorCon();
-		},
-		getParentData() {
-			this.$parent.$parent.$parent.run();
-		}
+
 	}
 };
 </script>
 
 <style>
+.w-e-toolbar,
+.w-e-droplist,
+.w-e-text-container .w-e-panel-container {
+	background-color: transparent !important;
+}
+.w-e-toolbar {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.w-e-text-container {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.w-e-toolbar,
+.w-e-text-container { 
+	border-color: #DCDFE6 !important;
+}
+.w-e-text-container .w-e-panel-container .w-e-panel-tab-content {
+	padding-left: 14px;
+	padding-right: 14px;
+}
+
+/* table 样式 */
+.editor-preview table {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.editor-preview table td,
+.editor-preview table th {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 3px 5px;
+}
+.editor-preview table th {
+  border-bottom: 2px solid #ccc;
+  text-align: center;
+}
+
+/* blockquote 样式 */
+.editor-preview blockquote {
+  display: block;
+  border-left: 8px solid #d0e5f2;
+  padding: 5px 10px;
+  margin: 10px 0;
+  line-height: 1.4;
+  font-size: 100%;
+  background-color: #f1f1f1;
+}
+
+/* code 样式 */
+.editor-preview code {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin: 0 3px;
+}
+.editor-preview pre code {
+  display: block;
+}
+
+/* ul ol 样式 */
+.editor-preview ul, ol {
+  margin: 10px 0 10px 20px;
+}
 </style>
