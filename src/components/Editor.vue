@@ -16,7 +16,7 @@ export default {
 	},
 	props: ["catchData"], //接收父组件的方法
 	mounted() {
-		var editor = new wangeditor(this.$refs.editorElem);
+		let editor = new wangeditor(this.$refs.editorElem);
 		editor.customConfig.onchange = html => {
 			this.editorContent = html;
 			this.catchData(html); //把这个html通过catchData的方法传入父组件

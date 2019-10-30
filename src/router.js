@@ -26,6 +26,17 @@ export default new Router({
 			path: '/photo',
 			name: 'photo',
 			component: () => import(/* webpackChunkName: "photo" */ './views/Photo.vue')
+		}, {
+			path: '/admin',
+			name: 'admin',
+			component: () => import(/* webpackChunkName: "admin" */'./views/Admin/Admin.vue'),
+			children: [
+				{
+					path: '/articleList',
+					name: 'articleList',
+					component: () => import(/* webpackChunkName: "admin" */'./views/Admin/ArticleList.vue')
+				}
+			]
 		}
 	]
 })

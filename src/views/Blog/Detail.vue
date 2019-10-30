@@ -97,7 +97,7 @@
                             <div class="card-header clearfix">
                                 <el-button type="text" class="article-nav-item float-left">
                                     <i class="el-icon-connection"></i>
-                                    <span>友情链接</span>
+                                    <span>友情链接{{test}}</span>
                                 </el-button>                     
                             </div>
                         </el-card>
@@ -111,19 +111,20 @@
 
 <script>
 import BlogHeader from '@/components/Blog/BlogHeader';
-import Editor from '@/components/Editor';
 import editorDefault from '@/assets/js/editor/editor_default.js';
 export default {
     data (){
         return {
             content: '',
             defaultText: editorDefault,
-            nickName: ''
+            nickName: '',
         }
     },
     components: {
-        BlogHeader,
-        Editor
+        BlogHeader
+    },
+    mounted(){
+        
     },
     methods: {
         catchData(value) {

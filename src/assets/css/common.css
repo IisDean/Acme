@@ -10,7 +10,13 @@ td,th,ul,ol{padding:0}
 .trans {
     transition: .5s all;
 }
-@import url('//at.alicdn.com/t/font_1468579_v1dzsee4f5l.css');
+@import url('//at.alicdn.com/t/font_1468579_0oq5yg9b4j7d.css');
+.pa {
+    position: absolute;
+}
+.pr {
+    position: relative;
+}
 .icon {
     font-size: 12px;
 }
@@ -19,6 +25,9 @@ td,th,ul,ol{padding:0}
 }
 .full-img img {
     display: block;
+}
+.over-hide {
+    overflow: hidden;
 }
 .clearfix:before,
 .clearfix:after {
@@ -56,6 +65,12 @@ td,th,ul,ol{padding:0}
     border-bottom: 1px solid #f4f4f4;
 }
 .el-aside, .el-tree {
+    overflow: unset;
+}
+.el-aside,
+.el-tree,
+.el-menu,
+.el-card {
     background-color: transparent !important;
 }
 /* header */
@@ -69,7 +84,6 @@ td,th,ul,ol{padding:0}
 }
 .main .box-card {
     margin: auto 0;
-    background-color: transparent;
 }
 .card-list .box-card {
     margin-bottom:  15px;
