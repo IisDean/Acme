@@ -9,7 +9,7 @@
 						</template>
 						<el-menu-item index="1-1" @click="toPage('/articleList')"><i class="icon icon-fenlei"></i>分类管理</el-menu-item>
 						<el-menu-item index="1-2"><i class="icon icon-article"></i>文章列表</el-menu-item>
-						<el-menu-item index="1-2"><i class="icon icon-commit"></i>评论列表</el-menu-item>
+						<el-menu-item index="1-3"><i class="icon icon-commit"></i>评论列表</el-menu-item>
 					</el-submenu>
 					<el-submenu index="2">
 						<template slot="title">
