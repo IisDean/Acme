@@ -29,4 +29,4 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 # acme
 
-[页面预览](http://acme.iisdean.cn)
+<a href="http://acme.iisdean.cn" target="_blank">页面预览</a>
