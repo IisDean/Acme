@@ -3,8 +3,8 @@ import Footer from "@/components/Footer.vue";
 import Editor from "@/components/Editor.vue";
 import AdminHeader from "@/components/Admin/AdminHeader.vue";
 
-function plugin (Vue){
-    if(plugin.installed) {
+function plugin(Vue) {
+    if (plugin.installed) {
         return;
     }
     Vue.component('Head', Head);

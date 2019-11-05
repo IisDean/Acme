@@ -3,7 +3,7 @@
         <BlogHeader></BlogHeader>
         <div class="main">
             <el-row :gutter="12" class="mr-0">
-                <el-col :xl='18' :lg="18" :md="16" :sm="24">
+                <el-col :xl="18" :lg="18" :md="16" :sm="24">
                     <el-card class="box-card text-left card" :body-style="{ padding: '0px'}">
                         <div class="article-wrap">
                             <!-- 文章标题 -->
@@ -39,10 +39,15 @@
                                         <div></div>
                                     </div>
                                     <div class="comment-con-wrap float-left">
-                                        <p class="comment-user-name">菲菲大魔王<span class="comment-time-text">1小时前</span></p>
+                                        <p class="comment-user-name">
+                                            菲菲大魔王
+                                            <span class="comment-time-text">1小时前</span>
+                                        </p>
                                         <p class="comment-time-text"></p>
                                         <div class="comment-content">
-                                            <p style="margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">路过。</p>
+                                            <p
+                                                style="margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;"
+                                            >路过。</p>
                                         </div>
                                     </div>
                                 </li>
@@ -51,10 +56,15 @@
                                         <div></div>
                                     </div>
                                     <div class="comment-con-wrap float-left">
-                                        <p class="comment-user-name">菲菲大魔王<span class="comment-time-text">1小时前</span></p>
+                                        <p class="comment-user-name">
+                                            菲菲大魔王
+                                            <span class="comment-time-text">1小时前</span>
+                                        </p>
                                         <p class="comment-time-text"></p>
                                         <div class="comment-content">
-                                            <p style="margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">里面的属性都能被访问了，然后开始进行执行阶段的操作。</p>
+                                            <p
+                                                style="margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 46); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;"
+                                            >里面的属性都能被访问了，然后开始进行执行阶段的操作。</p>
                                         </div>
                                     </div>
                                 </li>
@@ -90,7 +100,7 @@
                                 <el-button type="text" class="article-nav-item float-left">
                                     <i class="el-icon-news"></i>
                                     <span>动态</span>
-                                </el-button>                     
+                                </el-button>
                             </div>
                         </el-card>
                         <el-card class="box-card card" :body-style="{ padding: '0px' }">
@@ -98,7 +108,7 @@
                                 <el-button type="text" class="article-nav-item float-left">
                                     <i class="el-icon-connection"></i>
                                     <span>友情链接{{test}}</span>
-                                </el-button>                     
+                                </el-button>
                             </div>
                         </el-card>
                     </el-aside>
@@ -110,89 +120,87 @@
 </template>
 
 <script>
-import BlogHeader from '@/components/Blog/BlogHeader';
-import editorDefault from '@/assets/js/editor/editor_default.js';
+import BlogHeader from "@/components/Blog/BlogHeader";
+import editorDefault from "@/assets/js/editor/editor_default.js";
 export default {
-    data (){
+    data() {
         return {
-            content: '',
+            content: "",
             defaultText: editorDefault,
-            nickName: '',
-        }
+            nickName: ""
+        };
     },
     components: {
         BlogHeader
     },
-    mounted(){
-        
-    },
+    mounted() {},
     methods: {
         catchData(value) {
             console.log(value);
             this.content = value;
         }
     }
-}
+};
 </script>
 
-<style scope>
-    .article-wrap {
-        padding: 24px;
-    }
-    .article-title-text {
-        font-size: 38px;
-    }
-    .el-tag {
-        height: 20px;
-        line-height: 20px;
-    }
-    .article-msg-wrap .article-tag {
-        margin-right: 5px;
-    }
-    .article-msg-wrap .msg-label {
-        margin-left: 10px;
-        line-height: 20px;
-        font-size: 12px;
-        color: #909399;
-    }
-    .article-msg-wrap .msg-label span {
-        margin-left: 5px;
-    }
-    .comment-title-text {
-        margin: 15px auto 5px;
-        font-size: 14px;
-    }
-    .comment-btn {
-        margin-top: 20px;
-    }
-    .user-head {
-        background-color: #f1f1f1;
-    }
-    .user-head,
-    .user-head div {
-        width: 30px;
-        height: 30px;
-    }
-    .user-head div {
-        background-size: cover;
-    }
-    .comment-con-wrap {
-        margin-left: 10px;
-    }
-    .comment-user-name,
-    .comment-time-text {
-        line-height: 1;
-    }
-    .comment-user-name {
-        font-size: 14px;
-        color: #303133;
-    }
-    .comment-time-text {
-        margin-left: 6px;
-        font-size: 12px;
-        color: #808080;
-    }
-    .comment-content {
-        margin-top: 5px;
-    }
+<style scoped>
+.article-wrap {
+    padding: 24px;
+}
+.article-title-text {
+    font-size: 38px;
+}
+.el-tag {
+    height: 20px;
+    line-height: 20px;
+}
+.article-msg-wrap .article-tag {
+    margin-right: 5px;
+}
+.article-msg-wrap .msg-label {
+    margin-left: 10px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #909399;
+}
+.article-msg-wrap .msg-label span {
+    margin-left: 5px;
+}
+.comment-title-text {
+    margin: 15px auto 5px;
+    font-size: 14px;
+}
+.comment-btn {
+    margin-top: 20px;
+}
+.user-head {
+    background-color: #f1f1f1;
+}
+.user-head,
+.user-head div {
+    width: 30px;
+    height: 30px;
+}
+.user-head div {
+    background-size: cover;
+}
+.comment-con-wrap {
+    margin-left: 10px;
+}
+.comment-user-name,
+.comment-time-text {
+    line-height: 1;
+}
+.comment-user-name {
+    font-size: 14px;
+    color: #303133;
+}
+.comment-time-text {
+    margin-left: 6px;
+    font-size: 12px;
+    color: #808080;
+}
+.comment-content {
+    margin-top: 5px;
+}
 </style>
