@@ -72,6 +72,11 @@ ol {
     transition: .5s all;
 }
 
+::selection {
+    background: #191919;
+    color: #fff;
+}
+
 @import url('//at.alicdn.com/t/font_1468579_mgx9ig73yzg.css');
 
 .pa {

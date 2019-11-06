@@ -10,7 +10,7 @@
                         <el-menu-item index="1-1">
                             <i class="icon icon-fenlei"></i>分类管理
                         </el-menu-item>
-                        <el-menu-item index="1-2" @click="toPage('/articleList')">
+                        <el-menu-item index="1-2" @click="toPage('/blogListPanel')">
                             <i class="icon icon-article"></i>文章列表
                         </el-menu-item>
                         <el-menu-item index="1-3">
@@ -49,8 +49,8 @@ export default {
         return {};
     },
     methods: {
-        toPage(link) {
-            this.$router.push(link);
+        toPage(path) {
+            this.$router.push(path);
         }
     }
 };

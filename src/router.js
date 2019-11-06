@@ -34,9 +34,9 @@ export default new Router({
 		name: 'admin',
 		component: () => import( /* webpackChunkName: "admin" */ './views/Admin/Admin.vue'),
 		children: [{
-			path: '/articleList',
-			name: 'articleList',
-			component: () => import( /* webpackChunkName: "admin" */ './views/Admin/ArticleList.vue')
+			path: '/blogListPanel',
+			name: 'blogListPanel',
+			component: () => import( /* webpackChunkName: "blogListPanel" */ './views/Admin/BlogListPanel.vue')
 		}]
 	}]
 })

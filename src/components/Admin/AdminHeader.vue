@@ -4,11 +4,19 @@
             <div class="float-left crumbs-wrap">
                 <el-breadcrumb separator-class="el-icon-arrow-right">
                     <el-breadcrumb-item :to="{ path: '/admin' }">首页</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/articleList' }">分类管理</el-breadcrumb-item>
+                    <el-breadcrumb-item
+                        v-for="item in pathList"
+                        :to="{ path: item.path }"
+                    >{{ item.name }}</el-breadcrumb-item>
                 </el-breadcrumb>
             </div>
-            <div class="float-right" style="margin-right: 5px;">
-                <el-input placeholder="请输入内容" v-model="searchText" class="admin-search">
+            <div class="float-right" style="margin-right: 10px;">
+                <el-input
+                    placeholder="请输入内容"
+                    size="small"
+                    v-model="searchText"
+                    class="admin-search"
+                >
                     <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
             </div>
@@ -23,7 +31,8 @@ export default {
         return {
             searchText: ""
         };
-    }
+    },
+    props: ["pathList"]
 };
 </script>
 
@@ -36,8 +45,7 @@ export default {
     line-height: 50px;
 }
 .admin-search.el-input-group {
-    margin-top: 5px;
-    margin-right: 24px;
+    margin-top: 10px;
     box-sizing: border-box;
 }
 </style>

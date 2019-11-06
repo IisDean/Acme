@@ -1,6 +1,6 @@
 <template>
     <div class="article-manage">
-        <AdminHeader></AdminHeader>
+        <AdminHeader :pathList="pathList"></AdminHeader>
         <el-card class="box-card card article-container" :body-style="{ padding: '0px'}">
             <div class="topbar clearfix" align="left">
                 <el-button plain icon="el-icon-edit" size="mini">编辑</el-button>
@@ -21,7 +21,7 @@
                 </el-select>
                 <label class="topbar-item">搜索：</label>
                 <el-input
-                    placeholder="请输入文章名称"
+                    placeholder="请输入文章名"
                     size="mini"
                     v-model="searchText"
                     class="article-search"
@@ -33,7 +33,7 @@
             <el-table :data="tableData" size="small" style="width: 100%;">
                 <el-table-column type="selection" align="center" width="30"></el-table-column>
                 <el-table-column align="center" prop="imgUrl" width="90">
-                    <template slot="header" slot-scope="scope">封面图</template>
+                    <template slot="header" slot-scope="scope">封面图片</template>
                     <template slot-scope="scope">
                         <el-image
                             style="margin-top: 4px;width: 60px; height: 60px"
@@ -45,7 +45,7 @@
                 <el-table-column
                     prop="articleName"
                     :show-overflow-tooltip="true"
-                    label="文章名"
+                    label="文章名称"
                     align="center"
                     sortable
                     width="180"
@@ -63,8 +63,8 @@
                 </el-table-column>
                 <el-table-column prop="time" align="center" label="发布时间" sortable></el-table-column>
                 <el-table-column prop="author" align="center" label="作者" sortable></el-table-column>
-                <el-table-column prop="zan" align="center" label="喜爱" sortable></el-table-column>
-                <el-table-column prop="commit" align="center" label="谈论" sortable></el-table-column>
+                <el-table-column prop="zan" align="center" label="喜欢" sortable></el-table-column>
+                <el-table-column prop="commit" align="center" label="评论" sortable></el-table-column>
                 <el-table-column align="center" width="120px" prop="aid">
                     <template slot="header" slot-scope="scope">操作</template>
                     <template slot-scope="scope">
@@ -86,6 +86,13 @@
 export default {
     data() {
         return {
+            //面包屑路径
+            pathList: [
+                {
+                    path: "/blogListPanel",
+                    name: "文章列表"
+                }
+            ],
             allChecked: false,
             classifySelect: "全部",
             searchText: "", //搜索内容
