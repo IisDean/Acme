@@ -11,12 +11,7 @@
                 </el-breadcrumb>
             </div>
             <div class="float-right" style="margin-right: 10px;">
-                <el-input
-                    placeholder="请输入内容"
-                    size="small"
-                    v-model="searchText"
-                    class="admin-search"
-                >
+                <el-input placeholder="搜索" size="small" v-model="searchText" class="admin-search">
                     <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
             </div>

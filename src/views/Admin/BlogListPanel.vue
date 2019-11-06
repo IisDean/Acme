@@ -1,7 +1,7 @@
 <template>
     <div class="article-manage">
         <AdminHeader :pathList="pathList"></AdminHeader>
-        <el-card class="box-card card article-container" :body-style="{ padding: '0px'}">
+        <el-card class="box-card card panel-container" :body-style="{ padding: '0px'}">
             <div class="topbar clearfix" align="left">
                 <el-button plain icon="el-icon-edit" size="mini">编辑</el-button>
                 <el-button plain icon="el-icon-delete" size="mini">删除</el-button>
@@ -19,19 +19,31 @@
                         :value="item.value"
                     ></el-option>
                 </el-select>
+                <label class="topbar-item">日期：</label>
+                <el-date-picker
+                    class="select-time"
+                    v-model="selectTime"
+                    type="daterange"
+                    size="mini"
+                    unlink-panels
+                    range-separator="至"
+                    start-placeholder="开始日期"
+                    end-placeholder="结束日期"
+                    :picker-options="pickerOptions"
+                ></el-date-picker>
                 <label class="topbar-item">搜索：</label>
                 <el-input
-                    placeholder="请输入文章名"
+                    placeholder="请输入关键字"
                     size="mini"
                     v-model="searchText"
-                    class="article-search"
+                    class="topbar-search"
                 >
                     <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
-                <el-button type="primary" icon="el-icon-plus" size="mini" class="float-right">添加文章</el-button>
+                <el-button type="primary" icon="el-icon-plus" size="mini" class="float-right">发布</el-button>
             </div>
             <el-table :data="tableData" size="small" style="width: 100%;">
-                <el-table-column type="selection" align="center" width="30"></el-table-column>
+                <el-table-column type="selection" align="center" width="42"></el-table-column>
                 <el-table-column align="center" prop="imgUrl" width="90">
                     <template slot="header" slot-scope="scope">封面图片</template>
                     <template slot-scope="scope">
@@ -51,7 +63,7 @@
                     width="180"
                 ></el-table-column>
                 <el-table-column prop="classify" align="center" sortable>
-                    <template slot="header" slot-scope="scope">类别</template>
+                    <template slot="header" slot-scope="scope">分类</template>
                     <template slot-scope="scope">
                         <el-tag
                             type="info"
@@ -93,7 +105,6 @@ export default {
                     name: "文章列表"
                 }
             ],
-            allChecked: false,
             classifySelect: "全部",
             searchText: "", //搜索内容
             options: [
@@ -106,6 +117,45 @@ export default {
                     label: "前端"
                 }
             ],
+            pickerOptions: {
+                //时间选择
+                shortcuts: [
+                    {
+                        text: "最近一周",
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(
+                                start.getTime() - 3600 * 1000 * 24 * 7
+                            );
+                            picker.$emit("pick", [start, end]);
+                        }
+                    },
+                    {
+                        text: "最近一个月",
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(
+                                start.getTime() - 3600 * 1000 * 24 * 30
+                            );
+                            picker.$emit("pick", [start, end]);
+                        }
+                    },
+                    {
+                        text: "最近三个月",
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(
+                                start.getTime() - 3600 * 1000 * 24 * 90
+                            );
+                            picker.$emit("pick", [start, end]);
+                        }
+                    }
+                ]
+            },
+            selectTime: "", //时间选择
             tableData: [
                 {
                     aid: "1234",
@@ -150,41 +200,4 @@ export default {
 </script>
 
 <style scoped>
-.topbar {
-    padding: 12px 0;
-    border-bottom: 1px solid #ebeef5;
-}
-.topbar-item {
-    margin-left: 10px;
-}
-.classify-select {
-    width: 110px;
-}
-.topbar-btn {
-    width: auto !important;
-    height: 15px;
-}
-.article-container {
-    margin-top: 12px;
-    padding: 0 24px;
-}
-.page-wrap {
-    padding: 12px 0;
-}
-.icon-btn {
-    margin: 0 3px;
-    padding: 5px;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-}
-.icon-btn:hover {
-    transform: scale(1.2);
-}
-.tag-icon {
-    margin: 2px;
-}
-.article-search {
-    width: 200px;
-}
 </style>

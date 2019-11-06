@@ -7,7 +7,7 @@
                         <template slot="title">
                             <i class="icon icon-boke"></i>博客管理
                         </template>
-                        <el-menu-item index="1-1">
+                        <el-menu-item index="1-1" @click="toPage('/blogClassifyPanel')">
                             <i class="icon icon-fenlei"></i>分类管理
                         </el-menu-item>
                         <el-menu-item index="1-2" @click="toPage('/blogListPanel')">
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import "@/assets/css/admin_common.css";
 export default {
     name: "admin",
     data() {
