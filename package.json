@@ -13,8 +13,12 @@
     "jquery": "^3.4.1",
     "vue": "^2.6.10",
     "vue-baidu-map": "^0.21.22",
+<<<<<<< HEAD
     "vue-router": "^3.0.3",
     "wangeditor": "^3.1.1"
+=======
+    "vue-router": "^3.0.7"
+>>>>>>> 9ed3841d965081aa8e9a59bced03ad1e8601582b
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
