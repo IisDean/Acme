@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home">  
         <Head></Head>
         <el-card class="box-card">
             <el-row>
