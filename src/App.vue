@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <HomeBg msg="你好！这里是IisDean的个人网站，如有意深入交流，可加wx：IisDean" />
+        <HomeBg msg="你好！这里是IisDean的个人网站，如有意交流，可加wx：IisDean" />
         <router-view />
     </div>
 </template>
@@ -17,6 +17,15 @@ export default {
     },
     mounted() {
         this.$router.push({ path: "admin" });
+        this.$router.onError(error => {
+            const pattern = /Loading chunk (\d)+ failed/g;
+            const isChunkLoadFailed = error.message.match(pattern);
+            const targetPath = router.history.pending.fullPath;
+            if (isChunkLoadFailed) {
+                router.replace(targetPath);
+            }
+            console.log(121);
+        });
     }
 };
 </script>

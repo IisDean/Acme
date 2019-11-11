@@ -9,7 +9,7 @@ import GL_component from '@/globalCommponents';
 Vue.use(GL_component);
 
 import ElementUI from 'element-ui';
- 
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
