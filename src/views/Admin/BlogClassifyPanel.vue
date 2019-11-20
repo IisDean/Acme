@@ -20,7 +20,13 @@
                 >
                     <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
-                <el-button type="primary" icon="el-icon-plus" size="mini" class="float-right">新增分类</el-button>
+                <el-button
+                    type="primary"
+                    icon="el-icon-plus"
+                    size="mini"
+                    class="float-right"
+                    @click="addClassify"
+                >新增分类</el-button>
             </div>
             <el-table
                 :data="classifyData"
@@ -124,6 +130,26 @@ export default {
                 el.cid == val ? back++ : back;
             }
             return back;
+        },
+        addClassify() {
+            this.$prompt("请输入分类名称", "提示", {
+                confirmButtonText: "提交",
+                cancelButtonText: "取消",
+                inputPattern: /\S/,
+                inputErrorMessage: "分类名称不能为空！"
+            })
+                .then(({ value }) => {
+                    this.$message({
+                        type: "success",
+                        message: "提交成功！"
+                    });
+                })
+                .catch(() => {
+                    this.$message({
+                        type: "info",
+                        message: "已取消操作"
+                    });
+                });
         }
     }
 };
