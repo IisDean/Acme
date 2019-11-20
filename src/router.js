@@ -38,6 +38,10 @@ export default new Router({
 			name: 'blogListPanel',
 			component: () => import( /* webpackChunkName: "blogListPanel" */ './views/Admin/BlogListPanel.vue')
 		}, {
+			path: '/addArticle',
+			name: 'addArticle',
+			component: () => import( /* webpackChunkName: "addArticle" */ './views/Admin/AddArticle.vue')
+		}, {
 			path: '/blogClassifyPanel',
 			name: 'blogClassifyPanel',
 			component: () => import( /* webpackChunkName: "blogClassifyPanel" */ './views/Admin/BlogClassifyPanel.vue')

@@ -7,28 +7,33 @@
                         <template slot="title">
                             <i class="icon icon-boke"></i>博客管理
                         </template>
-                        <el-menu-item index="1-1" @click="toPage('/blogClassifyPanel')">
-                            <i class="icon icon-fenlei"></i>分类管理
-                        </el-menu-item>
-                        <el-menu-item index="1-2" @click="toPage('/blogListPanel')">
+                        <el-menu-item index="1-1" @click="toPage('/blogListPanel')">
                             <i class="icon icon-article"></i>文章列表
                         </el-menu-item>
-                        <el-menu-item index="1-3">
-                            <i class="icon icon-commit"></i>评论列表
+                        <el-menu-item index="1-2" @click="toPage('/blogClassifyPanel')">
+                            <i class="icon icon-fenlei"></i>分类管理
                         </el-menu-item>
                     </el-submenu>
                     <el-submenu index="2">
                         <template slot="title">
+                            <i class="icon icon-commit"></i>评论管理
+                        </template>
+                        <el-menu-item index="2-1">
+                            <i class="icon icon-article"></i>评论列表
+                        </el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="3">
+                        <template slot="title">
                             <i class="icon icon-set"></i>面板设置
                         </template>
-                        <el-menu-item index="2-1" @click="toPage('/admin')">
+                        <el-menu-item index="3-1" @click="toPage('/admin')">
                             <i class="icon icon-user"></i>用户管理
                         </el-menu-item>
-                        <el-menu-item index="2-2">
+                        <el-menu-item index="3-2">
                             <i class="icon icon-quanx"></i>权限管理
                         </el-menu-item>
                     </el-submenu>
-                    <el-menu-item index="3">
+                    <el-menu-item index="4">
                         <i class="icon icon-logout"></i>退出登录
                     </el-menu-item>
                 </el-menu>

@@ -51,3 +51,7 @@
 .page-wrap {
     padding: 12px 0;
 }
+
+.el-submenu .el-menu-item.is-active {
+    background-color: #e8e8e8;
+}

@@ -9,7 +9,7 @@ function plugin(Vue) {
     }
     Vue.component('Head', Head);
     Vue.component('Footer', Footer);
-    Vue.component('Editro', Editor);
+    Vue.component('Editor', Editor);
     Vue.component('AdminHeader', AdminHeader);
 }
 

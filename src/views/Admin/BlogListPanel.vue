@@ -3,7 +3,6 @@
         <AdminHeader :pathList="pathList"></AdminHeader>
         <el-card class="box-card card panel-container" :body-style="{ padding: '0px'}">
             <div class="topbar clearfix" align="left">
-                <el-button plain icon="el-icon-edit" size="mini">编辑</el-button>
                 <el-button plain icon="el-icon-delete" size="mini">删除</el-button>
                 <label class="topbar-item">分类：</label>
                 <el-select
@@ -40,7 +39,13 @@
                 >
                     <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
-                <el-button type="primary" icon="el-icon-plus" size="mini" class="float-right">发布</el-button>
+                <el-button
+                    type="primary"
+                    icon="el-icon-plus"
+                    size="mini"
+                    class="float-right"
+                    @click="toPage('/addArticle');"
+                >发布</el-button>
             </div>
             <el-table :data="tableData" size="small" style="width: 100%;">
                 <el-table-column type="selection" align="center" width="42"></el-table-column>
@@ -173,7 +178,10 @@ export default {
     mounted() {},
     methods: {
         handleEdit(index, aid) {
-            console.log(`编辑${aid}`);
+            this.toPage({
+                name: "addArticle",
+                params: { aid }
+            });
         },
         //删除文章
         handleDelete(aid) {
@@ -184,7 +192,7 @@ export default {
             })
                 .then(() => {
                     this.$message({
-                        type: "info",
+                        type: "success",
                         message: "删除成功！"
                     });
                 })
@@ -194,6 +202,9 @@ export default {
                         message: "已取消删除操作！"
                     });
                 });
+        },
+        toPage(path) {
+            this.$router.push(path);
         }
     }
 };
